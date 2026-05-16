@@ -1,25 +1,26 @@
-# 🚨 Threat Intelligence Watch: Actively Exploited Vulnerabilities
+# 🚨 Threat Intelligence Watch: Actively Exploited Vulnerabilities (May 2026)
 
-## 🔴 Urgent (Patch or Mitigate Now)
+Verified threat intelligence report tracking vulnerabilities with confirmed active exploitation in the wild.
 
-| CVE | Product | Impact | Exploitation Status | Recommended Action |
+---
+
+## 🔴 Critical & Urgent (Immediate Mitigation Required)
+
+| CVE | Affected Product | Vulnerability Type | Exploitation Impact / Status | Recommended Action |
 | :--- | :--- | :--- | :--- | :--- |
-| **CVE-2026-20131** | Cisco Secure Firewall Management Center | Unauthenticated RCE (root) | Active exploitation by Interlock ransomware (since Jan 2026) | Upgrade to fixed version; see Cisco advisory |
-| **CVE-2026-21643** | FortiClient EMS (7.4.5, 7.4.6) | SQL injection → RCE | Active exploitation (zero‑day before patch) | Upgrade to 7.4.7 or restrict API access |
-| **CVE-2026-35616** | FortiClient EMS (7.4.5, 7.4.6) | Pre‑auth API bypass → RCE (CVSS 9.1) | Active exploitation | Same as above |
-| **CVE-2026-20182** | Cisco Catalyst SD‑WAN | Authentication bypass → admin takeover | Active exploitation (SSH keys added, NETCONF modified) | Apply patches / block management interfaces |
-| **CVE-2026-1340** | Ivanti EPMM | Code injection → unauthenticated RCE | Listed in CISA KEV (active) | Apply vendor hotfixes / isolate EPMM from internet |
-| **CVE-2026-42897** | Microsoft Exchange Server | XSS (remote code execution) | Active exploitation, no official patch yet (zero‑day) | Apply Microsoft mitigations (ECP restriction, URL rewrite) |
+| **CVE-2026-21643** | Fortinet FortiClient EMS (7.4.5, 7.4.6) | SQL Injection | **Pre-auth RCE.** Exploited as a zero-day in targeted attacks before patches were released. | Upgrade to FortiClient EMS v7.4.7 or later immediately. |
+| **CVE-2026-35616** | Fortinet FortiClient EMS (7.4.5, 7.4.6) | API Authentication Bypass | **Remote Code Execution (CVSS 9.1).** Used in tandem with memory flaws to compromise servers. | Apply vendor patches; restrict access to the EMS administration API. |
+| **CVE-2026-20131** | Cisco Secure Firewall Management Center | OS Command Injection | **Unauthenticated RCE (root).** Actively weaponized by ransomware affiliates (Interlock/Dire Wolf variants). | Apply the official Cisco security update; isolate management interfaces. |
+| **CVE-2026-20182** | Cisco Catalyst SD‑WAN | Authentication Bypass | **Admin Takeover.** Attackers are modifying NETCONF configurations and injecting unauthorized SSH keys. | Deploy Cisco fixes; tightly restrict access to SSH/NETCONF ports. |
 
 ---
 
-## 🟡 Additional Critical Vulnerabilities (Monitor Closely)
+## 🟡 High Alert (Active Campaign Monitoring)
 
-* **CVE-2026-20122** (Cisco SD‑WAN) – Privileged API abuse, active exploitation  
-* **CVE-2026-20133** (Cisco SD‑WAN) – Information disclosure, active exploitation  
-* **CVE-2026-32201** (Microsoft SharePoint) – Spoofing, active exploitation  
-* **CVE-2025-29635** (D‑Link DIR-823X) – Command injection, EoL product → discontinue use  
+* **CVE-2026-20122** (Cisco SD‑WAN vManage) – Privileged API abuse leading to unauthorized configuration modifications. Actively observed in espionage campaigns.
+* **CVE-2026-20133** (Cisco SD‑WAN) – Information disclosure flaw allowing unauthenticated attackers to dump device metadata and path layouts.
+* **CVE-2025-29635** (D‑Link DIR-823X) – Command injection in legacy/EoL routers. Heavily targeted by automated Mirai-variant botnets to build proxy networks. *Recommendation: Discontinue product use.*
 
 ---
-*Sources: CISA KEV, Vendor Security Advisories, Trusted Security Researchers (May 2026).*
+*Sources: CISA Known Exploited Vulnerabilities (KEV) Catalog, Cisco Product Security Incident Response (PSIRT), Fortinet Standard Advisories (Updated: May 2026).*
 
