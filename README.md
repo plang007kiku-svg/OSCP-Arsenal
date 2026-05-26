@@ -36,7 +36,7 @@
 ---
 
 ### 🌐 Connect With Me
-* **Email:** plang007kiku@gmail.com
+* **Email:** plang007kiku@gmail.com ectico_hackers@wearehackerone.com
 * **GitHub:** [CoLaZa32](https://github.com/CoLaZa32)
-
+* ** https://orcid.org/0009-0008-5395-8526
 > *"Behavior over policy. Intuition over signatures. Autonomous defense for a safer digital future."*
